@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">
+  <defs>
+    <linearGradient id="vbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a0f1c"/>
+      <stop offset="1" stop-color="#070b15"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#vbg)"/>
+  <rect x="20" y="20" width="760" height="410" rx="10" fill="#0f172a" stroke="#1f2937"/>
+  <circle cx="44" cy="44" r="6" fill="#ef4444"/>
+  <circle cx="64" cy="44" r="6" fill="#eab308"/>
+  <circle cx="84" cy="44" r="6" fill="#22c55e"/>
+  <text x="400" y="48" font-size="12" fill="#94a3b8" text-anchor="middle">vigenere-toolkit — Kasiski cracker</text>
+  <line x1="20" y1="68" x2="780" y2="68" stroke="#1f2937"/>
+
+  <text x="40" y="100" font-size="13" fill="#94a3b8">$ vigenere crack --in ciphertext.txt</text>
+
+  <text x="40" y="140" font-size="12" fill="#cbd5e1">Analyzing trigram distances...</text>
+  <text x="40" y="160" font-size="12" fill="#cbd5e1">Found repeated trigram <tspan fill="#a78bfa">"THE"</tspan> at offsets 14, 38, 86, 134.</text>
+  <text x="40" y="180" font-size="12" fill="#cbd5e1">GCD of distances → <tspan fill="#a78bfa">probable key length = 6</tspan></text>
+
+  <text x="40" y="216" font-size="12" fill="#94a3b8">Column-by-column frequency analysis:</text>
+  <text x="40" y="236" font-size="12" fill="#22d3ee">  col 0 → shift  S (most likely 'S')</text>
+  <text x="40" y="256" font-size="12" fill="#22d3ee">  col 1 → shift  E (most likely 'E')</text>
+  <text x="40" y="276" font-size="12" fill="#22d3ee">  col 2 → shift  C (most likely 'C')</text>
+  <text x="40" y="296" font-size="12" fill="#22d3ee">  col 3 → shift  R (most likely 'R')</text>
+  <text x="40" y="316" font-size="12" fill="#22d3ee">  col 4 → shift  E (most likely 'E')</text>
+  <text x="40" y="336" font-size="12" fill="#22d3ee">  col 5 → shift  T (most likely 'T')</text>
+
+  <rect x="40" y="362" width="720" height="42" rx="6" fill="#0b1224" stroke="#14b8a6"/>
+  <text x="56" y="386" font-size="14" fill="#14b8a6" font-weight="700">Recovered keyword: SECRET</text>
+  <text x="56" y="402" font-size="11" fill="#94a3b8">Index of Coincidence confirmed (IC ≈ 0.067, English-like)</text>
+</svg>

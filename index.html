@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alhassana Diallo — Software Engineer · AI/ML</title>
+<meta name="description" content="CS senior at CCNY (Dec 2026). Building tools across software engineering, agentic AI, machine learning, and full-stack web dev. Incoming Information Security Engineering Intern at Ariat International.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #0a0a0c;
+  --surface: #14141a;
+  --surface-2: #1c1c24;
+  --border: #2a2a35;
+  --border-hover: #3a3a48;
+  --text: #fafafa;
+  --text-secondary: #d4d4d8;
+  --muted: #9ca3af;
+  --accent: #14b8a6;
+  --accent-2: #a78bfa;
+  --accent-cyan: #22d3ee;
+  --danger: #ef4444;
+  --success: #22c55e;
+  --warning: #eab308;
+  --shadow: 0 1px 3px rgba(0,0,0,0.4), 0 4px 12px rgba(0,0,0,0.25);
+  --shadow-hover: 0 4px 8px rgba(0,0,0,0.5), 0 12px 32px rgba(0,0,0,0.35);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* subtle gradient background accent in the hero area */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 600px;
+  background: radial-gradient(800px 400px at 80% 0%, rgba(20, 184, 166, 0.08), transparent 60%),
+              radial-gradient(700px 300px at 20% 0%, rgba(167, 139, 250, 0.06), transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 28px;
+  position: relative;
+  z-index: 1;
+}
+
+.mono {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+/* === NAV === */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(10, 10, 12, 0.7);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 18px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand {
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-brand::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.2);
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 14px;
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.15s;
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+/* === HERO === */
+.hero {
+  padding: 100px 0 80px;
+}
+
+.hero-eyebrow {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 6vw, 60px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+
+.hero h1 .gradient {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-cyan) 60%, var(--accent-2) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.hero-tagline {
+  font-size: 20px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  max-width: 720px;
+  margin-bottom: 14px;
+}
+
+.hero-description {
+  font-size: 17px;
+  color: var(--muted);
+  max-width: 680px;
+  margin-bottom: 32px;
+}
+
+.hero-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  background: rgba(20, 184, 166, 0.08);
+  border: 1px solid rgba(20, 184, 166, 0.25);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 36px;
+}
+
+.hero-status .dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.25);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #0a0a0c;
+  border-color: var(--accent);
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover, #0d9488);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.btn-secondary:hover {
+  background: var(--surface-2);
+  border-color: var(--border-hover);
+  transform: translateY(-1px);
+}
+
+/* === SECTION === */
+section {
+  padding: 80px 0;
+  scroll-margin-top: 80px;
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.section-num {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--accent);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.section-title {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.section-rule {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* === ABOUT === */
+.about-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.about-text p {
+  color: var(--text-secondary);
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+.about-text strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.about-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  font-size: 14px;
+}
+
+.about-card-title {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.about-card-list {
+  list-style: none;
+}
+
+.about-card-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+.about-card-list li:last-child { border-bottom: none; }
+
+.about-card-list li span:first-child { color: var(--muted); }
+
+/* === PROJECTS === */
+.projects {
+  display: grid;
+  gap: 32px;
+}
+
+.project {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.project:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+.project-inner {
+  display: grid;
+  grid-template-columns: 5fr 4fr;
+  align-items: stretch;
+  gap: 0;
+}
+
+.project:nth-child(even) .project-inner {
+  grid-template-columns: 4fr 5fr;
+}
+
+.project:nth-child(even) .project-image {
+  order: 2;
+}
+
+.project-image {
+  background: #0a0a0c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  border-right: 1px solid var(--border);
+}
+
+.project:nth-child(even) .project-image {
+  border-right: none;
+  border-left: 1px solid var(--border);
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+.project-content {
+  padding: 32px;
+}
+
+.project-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
+.project-title {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+
+.project-tagline {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 14px;
+  font-style: italic;
+}
+
+.project-description {
+  color: var(--text-secondary);
+  font-size: 14.5px;
+  margin-bottom: 18px;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 22px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+.project-links {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: color 0.15s;
+}
+
+.project-link:hover {
+  color: var(--accent);
+}
+
+.project-link svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* === EXPERIENCE === */
+.experience-list {
+  display: grid;
+  gap: 20px;
+}
+
+.exp {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 32px;
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: border-color 0.15s;
+}
+
+.exp:hover {
+  border-color: var(--border-hover);
+}
+
+.exp-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  padding-top: 2px;
+}
+
+.exp-role {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.exp-company {
+  font-size: 14px;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.exp-description {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* === SKILLS === */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.skill-group {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px;
+}
+
+.skill-group-title {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+}
+
+.skill-list li {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  padding: 4px 10px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-secondary);
+}
+
+/* === FOOTER === */
+footer {
+  padding: 80px 0 60px;
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+.footer-title {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.footer-text {
+  color: var(--muted);
+  max-width: 520px;
+  margin-bottom: 16px;
+}
+
+.footer-email {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 15px;
+  padding: 8px 0;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s;
+}
+
+.footer-email:hover {
+  border-bottom-color: var(--accent);
+}
+
+.footer-social {
+  display: flex;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.footer-social a {
+  color: var(--muted);
+  transition: color 0.15s;
+}
+
+.footer-social a:hover {
+  color: var(--accent);
+}
+
+.footer-social svg {
+  width: 22px;
+  height: 22px;
+}
+
+.footer-credit {
+  margin-top: 36px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .hero { padding: 60px 0 40px; }
+  .about-grid { grid-template-columns: 1fr; gap: 32px; }
+  .project-inner,
+  .project:nth-child(even) .project-inner { grid-template-columns: 1fr; }
+  .project-image,
+  .project:nth-child(even) .project-image { order: -1; border-right: none; border-left: none; border-bottom: 1px solid var(--border); }
+  .exp { grid-template-columns: 1fr; gap: 8px; }
+  section { padding: 56px 0; }
+}
+
+@media (max-width: 520px) {
+  .container { padding: 0 20px; }
+  .hero h1 { font-size: 36px; }
+  .hero-tagline { font-size: 17px; }
+  .section-title { font-size: 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">Alhassana Diallo</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-status">
+    <span class="dot"></span>
+    Joining Ariat International as Information Security Engineering Intern
+  </div>
+  <p class="hero-eyebrow">Hi, I'm Al</p>
+  <h1>I build tools that mix <span class="gradient">software, AI, and data</span>.</h1>
+  <p class="hero-tagline">CS senior at The City College of New York, graduating December 2026.</p>
+  <p class="hero-description">
+    I work across full-stack web development, agentic AI, and machine learning &mdash; with a growing focus on
+    information security. Recently shipped an application health dashboard, a log triage tool, and a from-scratch
+    reinforcement learning sandbox.
+  </p>
+  <div class="hero-links">
+    <a href="#projects" class="btn btn-primary">
+      View my work
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+    <a href="https://github.com/diallosanazy" target="_blank" rel="noopener" class="btn btn-secondary">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      github.com/diallosanazy
+    </a>
+    <a href="https://www.linkedin.com/in/alhassana-diallo-8055b0245/" target="_blank" rel="noopener" class="btn btn-secondary">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      LinkedIn
+    </a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header">
+    <span class="section-num">01.</span>
+    <h2 class="section-title">About me</h2>
+    <span class="section-rule"></span>
+  </div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>
+        I started building software during a web-development internship at <strong>The Difference App</strong>, a
+        digital health company in New York. I updated their site, improved SEO using tools like Yoast and SEMrush,
+        built Power BI dashboards to summarize weekly traffic, and wrote PowerShell and Excel/VBA macros to automate
+        repetitive reporting.
+      </p>
+      <p>
+        Since then I've been building my own tools on GitHub. The one I'm proudest of is an
+        <strong>App Health Dashboard</strong> &mdash; a Flask + Chart.js view of error rates, open bugs, and failing
+        endpoints &mdash; that grew directly out of the dashboards I built at my internship.
+      </p>
+      <p>
+        I'm also doing <strong>CCNY research on reinforcement learning</strong> for self-driving-car routing, using
+        Waymax and AlphaSim simulators, and I just accepted an <strong>Information Security Engineering Internship
+        at Ariat International</strong> &mdash; combining the dev work and data analysis I've been doing with a real
+        security context.
+      </p>
+    </div>
+    <div class="about-card">
+      <p class="about-card-title">At a glance</p>
+      <ul class="about-card-list">
+        <li><span>Status</span><span>CS Senior</span></li>
+        <li><span>School</span><span>CCNY</span></li>
+        <li><span>Graduating</span><span class="mono">Dec 2026</span></li>
+        <li><span>Based in</span><span>Bronx, NY</span></li>
+        <li><span>Languages</span><span>EN, FR</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header">
+    <span class="section-num">02.</span>
+    <h2 class="section-title">Selected projects</h2>
+    <span class="section-rule"></span>
+  </div>
+
+  <div class="projects">
+
+    <!-- App Health Dashboard -->
+    <article class="project">
+      <div class="project-inner">
+        <div class="project-image">
+          <img src="assets/app-health-dashboard.svg" alt="App Health Dashboard screenshot">
+        </div>
+        <div class="project-content">
+          <p class="project-eyebrow">Full-stack · Observability</p>
+          <h3 class="project-title">App Health Dashboard</h3>
+          <p class="project-tagline">One page instead of three log tabs.</p>
+          <p class="project-description">
+            A Python + Flask web app that ingests error logs, a bug list, and support tickets from CSV/JSON feeds
+            and surfaces the metrics that matter on a single page &mdash; errors in the last 24 hours, open bugs by
+            severity, top failing endpoints, and average uptime. Includes a Power BI export so the team can slice
+            the same data without re-querying. Built during my web-dev internship at The Difference App.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Flask</span>
+            <span class="tag">pandas</span>
+            <span class="tag">Chart.js</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">HTML/CSS</span>
+            <span class="tag">pytest</span>
+            <span class="tag">GitHub Actions</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/diallosanazy/app-health-dashboard" target="_blank" rel="noopener" class="project-link">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              View on GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- App Log Analyzer -->
+    <article class="project">
+      <div class="project-inner">
+        <div class="project-image">
+          <img src="assets/app-log-analyzer.svg" alt="App Log Analyzer report">
+        </div>
+        <div class="project-content">
+          <p class="project-eyebrow">Automation · Log analysis</p>
+          <h3 class="project-title">App Log Analyzer</h3>
+          <p class="project-tagline">Triage tool that reads three log shapes and reports what's wrong.</p>
+          <p class="project-description">
+            Python and PowerShell automation that reads three log formats (Python app logs, web-server access logs,
+            structured NDJSON) and flags patterns that usually mean something is wrong: a burst of errors, a
+            repeated exception class, errors right after a deploy, slow endpoints. Each finding is scored and
+            written into a Markdown report sorted by severity so I can read it with morning coffee.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">PowerShell</span>
+            <span class="tag">Regex</span>
+            <span class="tag">Markdown</span>
+            <span class="tag">pytest</span>
+            <span class="tag">CI</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/diallosanazy/app-log-analyzer" target="_blank" rel="noopener" class="project-link">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              View on GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- RL Playground -->
+    <article class="project">
+      <div class="project-inner">
+        <div class="project-image">
+          <img src="assets/rl-playground.svg" alt="RL Playground training curves">
+        </div>
+        <div class="project-content">
+          <p class="project-eyebrow">AI/ML · Reinforcement learning</p>
+          <h3 class="project-title">RL Playground</h3>
+          <p class="project-tagline">Q-learning and a from-scratch Double-DQN, written in pure NumPy.</p>
+          <p class="project-description">
+            A reinforcement-learning sandbox with two agents I wrote by hand: a tabular Q-learning agent and a
+            Double-DQN with a 2-layer MLP (replay buffer, target network, gradient-norm clipping). Trained on
+            GridWorld and CartPole. I wrote the neural network's forward and backward pass by hand to actually
+            understand the math behind the RL papers I read for my CCNY research on self-driving-car routing.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">NumPy</span>
+            <span class="tag">Q-learning</span>
+            <span class="tag">DQN</span>
+            <span class="tag">Gymnasium</span>
+            <span class="tag">pytest</span>
+            <span class="tag">CI</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/diallosanazy/rl-playground" target="_blank" rel="noopener" class="project-link">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              View on GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Vigenère Toolkit -->
+    <article class="project">
+      <div class="project-inner">
+        <div class="project-image">
+          <img src="assets/vigenere-toolkit.svg" alt="Vigenere toolkit cracker output">
+        </div>
+        <div class="project-content">
+          <p class="project-eyebrow">Cryptography · Course project</p>
+          <h3 class="project-title">Vigenère Toolkit</h3>
+          <p class="project-tagline">Encrypt, decrypt, and crack Vigenère ciphers.</p>
+          <p class="project-description">
+            A Python + Flask web UI and CLI for polyalphabetic substitution ciphers, plus a cracker that recovers
+            the keyword from ciphertext alone using Kasiski examination and Index of Coincidence. Built for the
+            group project in CCNY's Computer Security course (CSc 47200) &mdash; my foundation in applied
+            cryptography.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Flask</span>
+            <span class="tag">Cryptography</span>
+            <span class="tag">Kasiski examination</span>
+            <span class="tag">CLI</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/diallosanazy/vigenere-toolkit" target="_blank" rel="noopener" class="project-link">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              View on GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header">
+    <span class="section-num">03.</span>
+    <h2 class="section-title">Experience</h2>
+    <span class="section-rule"></span>
+  </div>
+
+  <div class="experience-list">
+
+    <div class="exp">
+      <div class="exp-date">May 2026 — Aug 2026</div>
+      <div>
+        <div class="exp-role">Information Security Engineering Intern</div>
+        <div class="exp-company">Ariat International — Incoming</div>
+        <p class="exp-description">
+          Joining the InfoSec team to help build an internal single-pane-of-glass dashboard of the security
+          program's operational metrics and to assist on incident detection and response.
+        </p>
+      </div>
+    </div>
+
+    <div class="exp">
+      <div class="exp-date">Feb 2024 — Apr 2024</div>
+      <div>
+        <div class="exp-role">Web Development Intern</div>
+        <div class="exp-company">The Difference App</div>
+        <p class="exp-description">
+          Updated site layout and content, improved SEO (Yoast, Sitechecker, SEMrush), built Microsoft Excel and
+          Power BI dashboards summarizing weekly traffic and content engagement, and wrote PowerShell + Excel/VBA
+          macros to automate the team's repetitive reporting.
+        </p>
+      </div>
+    </div>
+
+    <div class="exp">
+      <div class="exp-date">Jan 2023 — Aug 2023</div>
+      <div>
+        <div class="exp-role">Intern</div>
+        <div class="exp-company">Break Through Tech</div>
+        <p class="exp-description">
+          Paid, competitive, hands-on program building real-world mission-driven applications alongside software
+          professionals. Learned user-centered design and prototyping, designed algorithms for application use
+          cases, and built interactive websites using HTML5, CSS, and JavaScript.
+        </p>
+      </div>
+    </div>
+
+    <div class="exp">
+      <div class="exp-date">Jan 2022 — Aug 2022</div>
+      <div>
+        <div class="exp-role">STEM Mentor</div>
+        <div class="exp-company">Techie Youth Organization</div>
+        <p class="exp-description">
+          Mentored teens through STEM courses, including basic concepts of machine learning, AI, and model
+          evaluation; coding games with Java; and teen coding with Python.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header">
+    <span class="section-num">04.</span>
+    <h2 class="section-title">Tools I use</h2>
+    <span class="section-rule"></span>
+  </div>
+
+  <div class="skills-grid">
+    <div class="skill-group">
+      <p class="skill-group-title">Languages</p>
+      <ul class="skill-list">
+        <li>Python</li>
+        <li>JavaScript</li>
+        <li>C++</li>
+        <li>Java</li>
+        <li>R</li>
+        <li>SQL</li>
+        <li>HTML/CSS</li>
+        <li>PowerShell</li>
+        <li>VBA</li>
+      </ul>
+    </div>
+
+    <div class="skill-group">
+      <p class="skill-group-title">Frameworks &amp; libraries</p>
+      <ul class="skill-list">
+        <li>Flask</li>
+        <li>Bootstrap</li>
+        <li>Chart.js</li>
+        <li>NumPy</li>
+        <li>pandas</li>
+        <li>TensorFlow</li>
+      </ul>
+    </div>
+
+    <div class="skill-group">
+      <p class="skill-group-title">Tools &amp; platforms</p>
+      <ul class="skill-list">
+        <li>Git</li>
+        <li>GitHub Actions</li>
+        <li>Power BI</li>
+        <li>Excel (PivotTables, VBA)</li>
+        <li>WordPress</li>
+        <li>Elementor</li>
+        <li>Markdown</li>
+        <li>Microsoft 365</li>
+      </ul>
+    </div>
+
+    <div class="skill-group">
+      <p class="skill-group-title">Concepts</p>
+      <ul class="skill-list">
+        <li>Web development</li>
+        <li>Application monitoring</li>
+        <li>Log analysis</li>
+        <li>Data analytics</li>
+        <li>Reinforcement learning (Q-learning, DQN)</li>
+        <li>Cryptography fundamentals</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</div><!-- /container -->
+
+<!-- FOOTER / CONTACT -->
+<footer id="contact">
+  <div class="container">
+    <div class="footer-inner">
+      <p class="hero-eyebrow">Get in touch</p>
+      <h2 class="footer-title">Let's build something.</h2>
+      <p class="footer-text">
+        I'm always open to talking about software engineering, AI/ML, web development, or interesting problems in
+        security. The fastest way to reach me is email.
+      </p>
+      <a href="mailto:alhassanadiallo224@gmail.com" class="footer-email">alhassanadiallo224@gmail.com</a>
+      <div class="footer-social">
+        <a href="https://github.com/diallosanazy" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/alhassana-diallo-8055b0245/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="mailto:alhassanadiallo224@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+      <p class="footer-credit">Designed and built by Alhassana Diallo</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
