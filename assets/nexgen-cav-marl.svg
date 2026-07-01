@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 460" font-family="-apple-system,Segoe UI,sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#0a0f1c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1100" height="460" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="40" y="40" font-size="16" font-weight="700" fill="#e2e8f0">NexGen CAV — Multi-Agent V2V packet routing</text>
+  <text x="40" y="62" font-size="12" fill="#94a3b8">8 agents · ring + chord topology · MARL-PPO / MADDPG / MAPPO</text>
+
+  <!-- Network panel -->
+  <rect x="60" y="90" width="560" height="320" rx="8" fill="#111827" stroke="#1f2937"/>
+
+  <!-- ring + chord edges -->
+  <g stroke="#334155" stroke-width="1.5">
+    <!-- ring: 0-1-2-3-4-5-6-7-0 around circle centered (340,250) r=120 -->
+    <line x1="340" y1="130" x2="425" y2="165"/>
+    <line x1="425" y1="165" x2="460" y2="250"/>
+    <line x1="460" y1="250" x2="425" y2="335"/>
+    <line x1="425" y1="335" x2="340" y2="370"/>
+    <line x1="340" y1="370" x2="255" y2="335"/>
+    <line x1="255" y1="335" x2="220" y2="250"/>
+    <line x1="220" y1="250" x2="255" y2="165"/>
+    <line x1="255" y1="165" x2="340" y2="130"/>
+  </g>
+  <!-- chords (opposite nodes) -->
+  <g stroke="#14b8a6" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.7">
+    <line x1="340" y1="130" x2="340" y2="370"/>
+    <line x1="425" y1="165" x2="255" y2="335"/>
+    <line x1="460" y1="250" x2="220" y2="250"/>
+    <line x1="425" y1="335" x2="255" y2="165"/>
+  </g>
+  <!-- nodes -->
+  <g>
+    <circle cx="340" cy="130" r="16" fill="#0f172a" stroke="#22d3ee" stroke-width="2.5"/>
+    <circle cx="425" cy="165" r="16" fill="#0f172a" stroke="#22d3ee" stroke-width="2.5"/>
+    <circle cx="460" cy="250" r="16" fill="#0f172a" stroke="#22d3ee" stroke-width="2.5"/>
+    <circle cx="425" cy="335" r="16" fill="#0f172a" stroke="#22d3ee" stroke-width="2.5"/>
+    <circle cx="340" cy="370" r="16" fill="#0f172a" stroke="#22d3ee" stroke-width="2.5"/>
+    <circle cx="255" cy="335" r="16" fill="#0f172a" stroke="#22d3ee" stroke-width="2.5"/>
+    <circle cx="220" cy="250" r="16" fill="#0f172a" stroke="#22d3ee" stroke-width="2.5"/>
+    <circle cx="255" cy="165" r="16" fill="#0f172a" stroke="#22d3ee" stroke-width="2.5"/>
+  </g>
+  <g font-size="12" font-weight="600" fill="#e2e8f0" text-anchor="middle">
+    <text x="340" y="134">0</text>
+    <text x="425" y="169">1</text>
+    <text x="460" y="254">2</text>
+    <text x="425" y="339">3</text>
+    <text x="340" y="374">4</text>
+    <text x="255" y="339">5</text>
+    <text x="220" y="254">6</text>
+    <text x="255" y="169">7</text>
+  </g>
+
+  <!-- Metrics panel -->
+  <rect x="660" y="90" width="380" height="320" rx="8" fill="#111827" stroke="#1f2937"/>
+  <text x="684" y="124" font-size="13" font-weight="600" fill="#cbd5e1">Resilience under 0–25% link loss</text>
+
+  <!-- LVR row -->
+  <text x="684" y="164" font-size="12" fill="#94a3b8">Latency Violation Rate</text>
+  <rect x="684" y="176" width="332" height="14" rx="7" fill="#0f172a" stroke="#1f2937"/>
+  <rect x="684" y="176" width="8" height="14" rx="7" fill="#22c55e"/>
+  <text x="1016" y="187" font-size="12" fill="#22c55e" text-anchor="end">0.0% ✓</text>
+
+  <!-- PDR row -->
+  <text x="684" y="224" font-size="12" fill="#94a3b8">Packet Delivery Ratio (MADDPG)</text>
+  <rect x="684" y="236" width="332" height="14" rx="7" fill="#0f172a" stroke="#1f2937"/>
+  <rect x="684" y="236" width="300" height="14" rx="7" fill="#14b8a6"/>
+
+  <!-- Comm benefit row -->
+  <text x="684" y="284" font-size="12" fill="#94a3b8">Agent messaging (MAPPO) stability</text>
+  <rect x="684" y="296" width="332" height="14" rx="7" fill="#0f172a" stroke="#1f2937"/>
+  <rect x="684" y="296" width="270" height="14" rx="7" fill="#a78bfa"/>
+
+  <text x="684" y="356" font-size="11" fill="#64748b">JAX / Waymax backend · CSC 59866 Senior Project</text>
+  <text x="684" y="378" font-size="11" fill="#64748b">Key result: LVR = 0.0 across all loss rates</text>
+</svg>

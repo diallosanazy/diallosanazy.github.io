@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 460" font-family="-apple-system,Segoe UI,sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#0a0f1c"/>
+    </linearGradient>
+    <clipPath id="mapClip">
+      <rect x="60" y="90" width="620" height="320" rx="8"/>
+    </clipPath>
+  </defs>
+  <rect width="1100" height="460" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="40" y="40" font-size="16" font-weight="700" fill="#e2e8f0">Street Vendor Finder — find nearby vendors &amp; menus</text>
+  <text x="40" y="62" font-size="12" fill="#94a3b8">React + Vite single-page app · Supabase (Postgres) backend</text>
+
+  <!-- ===== MAP PANEL ===== -->
+  <g clip-path="url(#mapClip)">
+    <!-- land base -->
+    <rect x="60" y="90" width="620" height="320" fill="#111a2e"/>
+
+    <!-- park block -->
+    <rect x="90" y="110" width="150" height="110" rx="10" fill="#14311f"/>
+    <path d="M110 210 q55 -70 110 0" fill="none" stroke="#1c4a2e" stroke-width="3"/>
+    <text x="100" y="135" font-size="10" fill="#4b8f6a" font-weight="600">CITY PARK</text>
+
+    <!-- water (river) -->
+    <path d="M60 400 L200 250 L360 300 L520 205 L680 250 L680 410 L60 410 Z" fill="#0e2a44"/>
+    <path d="M60 400 L200 250 L360 300 L520 205 L680 250" fill="none" stroke="#123a5c" stroke-width="2"/>
+
+    <!-- city blocks -->
+    <g fill="#16233c">
+      <rect x="260" y="110" width="120" height="70" rx="6"/>
+      <rect x="410" y="110" width="110" height="70" rx="6"/>
+      <rect x="540" y="110" width="120" height="70" rx="6"/>
+      <rect x="410" y="300" width="90" height="55" rx="6"/>
+    </g>
+
+    <!-- roads: dark casing then lighter fill -->
+    <g stroke="#0b1220" stroke-width="16" stroke-linecap="round">
+      <line x1="60" y1="196" x2="680" y2="196"/>
+      <line x1="60" y1="286" x2="680" y2="286"/>
+      <line x1="250" y1="90" x2="250" y2="410"/>
+      <line x1="400" y1="90" x2="400" y2="410"/>
+      <line x1="530" y1="90" x2="530" y2="410"/>
+    </g>
+    <g stroke="#243554" stroke-width="10" stroke-linecap="round">
+      <line x1="60" y1="196" x2="680" y2="196"/>
+      <line x1="60" y1="286" x2="680" y2="286"/>
+      <line x1="250" y1="90" x2="250" y2="410"/>
+      <line x1="400" y1="90" x2="400" y2="410"/>
+      <line x1="530" y1="90" x2="530" y2="410"/>
+    </g>
+    <!-- lane dashes on the main avenue -->
+    <line x1="60" y1="196" x2="680" y2="196" stroke="#40567f" stroke-width="1.5" stroke-dasharray="8 10"/>
+  </g>
+  <!-- panel border drawn on top of the clipped map -->
+  <rect x="60" y="90" width="620" height="320" rx="8" fill="none" stroke="#1f2937"/>
+
+  <!-- vendor pins -->
+  <g>
+    <path d="M150 150 a18 18 0 1 1 0.1 0 Z M150 190 l-14 -22 h28 Z" fill="#14b8a6"/>
+    <circle cx="150" cy="150" r="7" fill="#0f172a"/>
+    <path d="M320 235 a18 18 0 1 1 0.1 0 Z M320 275 l-14 -22 h28 Z" fill="#a78bfa"/>
+    <circle cx="320" cy="235" r="7" fill="#0f172a"/>
+    <path d="M470 150 a18 18 0 1 1 0.1 0 Z M470 190 l-14 -22 h28 Z" fill="#22d3ee"/>
+    <circle cx="470" cy="150" r="7" fill="#0f172a"/>
+    <path d="M600 320 a18 18 0 1 1 0.1 0 Z M600 360 l-14 -22 h28 Z" fill="#14b8a6"/>
+    <circle cx="600" cy="320" r="7" fill="#0f172a"/>
+  </g>
+  <!-- "you are here" marker -->
+  <circle cx="400" cy="330" r="20" fill="#3b82f6" opacity="0.25"/>
+  <circle cx="400" cy="330" r="10" fill="#3b82f6" stroke="#0f172a" stroke-width="2"/>
+
+  <!-- Vendor list panel -->
+  <rect x="720" y="90" width="320" height="320" rx="8" fill="#111827" stroke="#1f2937"/>
+  <text x="744" y="122" font-size="13" font-weight="600" fill="#cbd5e1">Nearby vendors</text>
+
+  <!-- card 1 -->
+  <rect x="740" y="140" width="280" height="72" rx="8" fill="#0f172a" stroke="#1f2937"/>
+  <circle cx="770" cy="176" r="16" fill="#14b8a6"/>
+  <text x="800" y="170" font-size="13" font-weight="600" fill="#e2e8f0">Mama's Halal Cart</text>
+  <text x="800" y="190" font-size="11" fill="#94a3b8">Street food · 0.2 mi · open now</text>
+
+  <!-- card 2 -->
+  <rect x="740" y="224" width="280" height="72" rx="8" fill="#0f172a" stroke="#1f2937"/>
+  <circle cx="770" cy="260" r="16" fill="#a78bfa"/>
+  <text x="800" y="254" font-size="13" font-weight="600" fill="#e2e8f0">Fresh Fruit Stand</text>
+  <text x="800" y="274" font-size="11" fill="#94a3b8">Produce · 0.4 mi · open now</text>
+
+  <!-- card 3 -->
+  <rect x="740" y="308" width="280" height="72" rx="8" fill="#0f172a" stroke="#1f2937"/>
+  <circle cx="770" cy="344" r="16" fill="#22d3ee"/>
+  <text x="800" y="338" font-size="13" font-weight="600" fill="#e2e8f0">Taco Corner</text>
+  <text x="800" y="358" font-size="11" fill="#94a3b8">Street food · 0.6 mi · closes 9pm</text>
+</svg>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alhassana Diallo — Software Engineer · AI/ML</title>
-<meta name="description" content="CS senior at CCNY (Dec 2026). Building tools across software engineering, agentic AI, machine learning, and full-stack web dev. Incoming Information Security Engineering Intern at Ariat International.">
+<meta name="description" content="CS senior at CCNY (Dec 2026). Building tools across software engineering, agentic AI, machine learning, and full-stack web dev. Information Security Engineering Intern at Ariat International, building security dashboards and cloud data pipelines.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -511,7 +511,31 @@ section {
   color: var(--text-secondary);
 }
 
-/* === SKILLS === */
+.exp-points {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 0;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.exp-points li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 7px;
+}
+
+.exp-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -662,15 +686,15 @@ footer {
 <section class="hero">
   <div class="hero-status">
     <span class="dot"></span>
-    Joining Ariat International as Information Security Engineering Intern
+    Information Security Engineering Intern at Ariat International
   </div>
   <p class="hero-eyebrow">Hi, I'm Al</p>
   <h1>I build tools that mix <span class="gradient">software, AI, and data</span>.</h1>
   <p class="hero-tagline">CS senior at The City College of New York, graduating December 2026.</p>
   <p class="hero-description">
     I work across full-stack web development, agentic AI, and machine learning &mdash; with a growing focus on
-    information security. Recently shipped an application health dashboard, a log triage tool, and a from-scratch
-    reinforcement learning sandbox.
+    information security. Recently shipped five production security dashboards and cloud data pipelines at Ariat,
+    a full-stack vendor-finder app, and a multi-agent reinforcement learning system for connected self-driving cars.
   </p>
   <div class="hero-links">
     <a href="#projects" class="btn btn-primary">
@@ -709,10 +733,11 @@ footer {
         endpoints &mdash; that grew directly out of the dashboards I built at my internship.
       </p>
       <p>
-        I'm also doing <strong>CCNY research on reinforcement learning</strong> for self-driving-car routing, using
-        Waymax and AlphaSim simulators, and I just accepted an <strong>Information Security Engineering Internship
-        at Ariat International</strong> &mdash; combining the dev work and data analysis I've been doing with a real
-        security context.
+        I'm also leading <strong>CCNY senior-project research on multi-agent reinforcement learning</strong> for
+        connected self-driving-car routing, using JAX and the Waymax simulator. And this summer I worked as an
+        <strong>Information Security Engineering Intern at Ariat International</strong>, where I designed and shipped
+        five production security dashboards and the cloud data pipelines behind them &mdash; combining the dev work
+        and data analysis I've been doing with a real security context.
       </p>
     </div>
     <div class="about-card">
@@ -766,6 +791,42 @@ footer {
           </div>
           <div class="project-links">
             <a href="https://github.com/diallosanazy/app-health-dashboard" target="_blank" rel="noopener" class="project-link">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              View on GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Street Vendor Finder -->
+    <article class="project">
+      <div class="project-inner">
+        <div class="project-image">
+          <img src="assets/vendor-app.svg" alt="Street Vendor Finder map and vendor list">
+        </div>
+        <div class="project-content">
+          <p class="project-eyebrow">Full-stack · Team project</p>
+          <h3 class="project-title">Street Vendor Finder</h3>
+          <p class="project-tagline">Find nearby street vendors and see what they're selling.</p>
+          <p class="project-description">
+            A responsive full-stack web app that helps people locate nearby street vendors and browse their menus.
+            Vendors register, post their location and hours, and publish a menu; customers search by location or
+            food type and view vendor details on a map. Built as a four-person team project for CCNY's Software
+            Engineering course (CSc 47300) &mdash; a React + Vite single-page front end wired to a Supabase
+            (PostgreSQL) backend for auth, data, and real-time updates.
+          </p>
+          <div class="project-tags">
+            <span class="tag">React</span>
+            <span class="tag">Vite</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Supabase</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">React Router</span>
+            <span class="tag">CSS</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/diallosanazy/csc47300-s2026-something/tree/main/Sizzle/Web" target="_blank" rel="noopener" class="project-link">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
               View on GitHub
             </a>
@@ -843,6 +904,43 @@ footer {
       </div>
     </article>
 
+    <!-- NexGen CAV — Multi-Agent Routing -->
+    <article class="project">
+      <div class="project-inner">
+        <div class="project-image">
+          <img src="assets/nexgen-cav-marl.svg" alt="NexGen CAV multi-agent routing topology and metrics">
+        </div>
+        <div class="project-content">
+          <p class="project-eyebrow">AI Research · Multi-agent RL</p>
+          <h3 class="project-title">NexGen CAV — Multi-Agent Routing</h3>
+          <p class="project-tagline">Teaching a fleet of self-driving cars to route packets as a team.</p>
+          <p class="project-description">
+            My two-semester CCNY senior-project research (CSc 59866). Instead of one central controller, eight
+            connected autonomous vehicles each run their own reinforcement-learning policy and cooperate to route
+            packets through a vehicle-to-vehicle wireless network &mdash; even under up to 25% link loss. I built and
+            compared three algorithms (MARL-PPO, MADDPG, and MAPPO with agent-to-agent messaging) against
+            shortest-path and greedy baselines on a JAX/Waymax backend; all RL methods held the latency-violation
+            rate at 0% across every loss level.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">JAX</span>
+            <span class="tag">Waymax</span>
+            <span class="tag">MARL</span>
+            <span class="tag">PPO</span>
+            <span class="tag">MADDPG</span>
+            <span class="tag">MAPPO</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/diallosanazy/nexgen-cav-marl" target="_blank" rel="noopener" class="project-link">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              View on GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+
     <!-- Vigenère Toolkit -->
     <article class="project">
       <div class="project-inner">
@@ -890,14 +988,23 @@ footer {
   <div class="experience-list">
 
     <div class="exp">
-      <div class="exp-date">May 2026 — Aug 2026</div>
+      <div class="exp-date">Jun 2026 — Aug 2026</div>
       <div>
         <div class="exp-role">Information Security Engineering Intern</div>
-        <div class="exp-company">Ariat International — Incoming</div>
-        <p class="exp-description">
-          Joining the InfoSec team to help build an internal single-pane-of-glass dashboard of the security
-          program's operational metrics and to assist on incident detection and response.
-        </p>
+        <div class="exp-company">Ariat International</div>
+        <ul class="exp-points">
+          <li>Designed and delivered five production security dashboards, unifying Rapid7 InsightIDR &amp; InsightVM,
+            Microsoft Defender, Microsoft Sentinel, and Azure Entra ID into a single reporting experience used by the
+            Security Operations team.</li>
+          <li>Built automated data pipelines with Microsoft Fabric, Microsoft Graph API, Rapid7 APIs, and Azure Log
+            Analytics (KQL, DAX, Power Query M) &mdash; teaching myself an entirely new cloud analytics stack while
+            shipping production-ready solutions.</li>
+          <li>Partnered with security engineers and analysts to define metrics such as MTTD, MTTR, Secure Score,
+            vulnerability trends, and SLA compliance, translating technical requirements into dashboards for both
+            engineers and leadership.</li>
+          <li>Presented completed dashboards to security leadership and wrote deployment documentation, maintenance
+            guides, and handoff runbooks to keep them sustainable after the internship.</li>
+        </ul>
       </div>
     </div>
 
@@ -956,10 +1063,14 @@ footer {
       <ul class="skill-list">
         <li>Python</li>
         <li>JavaScript</li>
+        <li>TypeScript</li>
         <li>C++</li>
         <li>Java</li>
         <li>R</li>
         <li>SQL</li>
+        <li>KQL</li>
+        <li>DAX</li>
+        <li>Power Query (M)</li>
         <li>HTML/CSS</li>
         <li>PowerShell</li>
         <li>VBA</li>
@@ -969,12 +1080,17 @@ footer {
     <div class="skill-group">
       <p class="skill-group-title">Frameworks &amp; libraries</p>
       <ul class="skill-list">
+        <li>React</li>
+        <li>Vite</li>
         <li>Flask</li>
         <li>Bootstrap</li>
         <li>Chart.js</li>
         <li>NumPy</li>
         <li>pandas</li>
         <li>TensorFlow</li>
+        <li>JAX</li>
+        <li>Plotly</li>
+        <li>Dash</li>
       </ul>
     </div>
 
@@ -983,10 +1099,19 @@ footer {
       <ul class="skill-list">
         <li>Git</li>
         <li>GitHub Actions</li>
+        <li>Microsoft Fabric</li>
         <li>Power BI</li>
+        <li>Tableau</li>
+        <li>Azure Sentinel</li>
+        <li>Microsoft Defender</li>
+        <li>Microsoft Entra ID</li>
+        <li>Azure Log Analytics</li>
+        <li>Microsoft Graph API</li>
+        <li>Rapid7 InsightIDR</li>
+        <li>Rapid7 InsightVM</li>
+        <li>Supabase</li>
         <li>Excel (PivotTables, VBA)</li>
         <li>WordPress</li>
-        <li>Elementor</li>
         <li>Markdown</li>
         <li>Microsoft 365</li>
       </ul>
@@ -995,11 +1120,14 @@ footer {
     <div class="skill-group">
       <p class="skill-group-title">Concepts</p>
       <ul class="skill-list">
-        <li>Web development</li>
+        <li>Full-stack web development</li>
+        <li>Security operations &amp; SIEM</li>
+        <li>Vulnerability management</li>
+        <li>Cloud data pipelines</li>
+        <li>Data analytics &amp; visualization</li>
         <li>Application monitoring</li>
         <li>Log analysis</li>
-        <li>Data analytics</li>
-        <li>Reinforcement learning (Q-learning, DQN)</li>
+        <li>Multi-agent reinforcement learning</li>
         <li>Cryptography fundamentals</li>
       </ul>
     </div>
