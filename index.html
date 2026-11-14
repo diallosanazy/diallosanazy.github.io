@@ -387,6 +387,23 @@ section {
   display: block;
 }
 
+/* Two stacked screenshots (e.g. manager + resident views) */
+.project-image--two {
+  flex-direction: column;
+  gap: 18px;
+  padding: 20px;
+  align-items: stretch;
+}
+.project-image--two figure {
+  margin: 0;
+}
+.project-image--two figcaption {
+  color: #9a9a9e;
+  font-size: 12px;
+  margin-top: 8px;
+  text-align: center;
+}
+
 /* Real app screenshot: light frame showing the full landing-through-map capture */
 .project-image-shot {
   background: #f5f3ef;
@@ -852,8 +869,15 @@ footer {
     <!-- WashWise Laundry Reservation System -->
     <article class="project">
       <div class="project-inner">
-        <div class="project-image">
-          <img src="assets/washwise-dashboard.png" alt="WashWise manager dashboard running: live machine availability and revenue">
+        <div class="project-image project-image--two">
+          <figure>
+            <img src="assets/washwise-dashboard.png" alt="WashWise manager dashboard running: live machine availability and revenue">
+            <figcaption>Manager dashboard &mdash; live availability and revenue</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/washwise-tenant.png" alt="WashWise resident view running: find a machine and reserve it">
+            <figcaption>Resident view &mdash; find and reserve a machine</figcaption>
+          </figure>
         </div>
         <div class="project-content">
           <p class="project-eyebrow">Full-stack · Team project</p>
